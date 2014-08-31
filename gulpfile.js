@@ -31,6 +31,16 @@ gulp.task('build-lint', function() {
     .pipe(jshint.reporter('fail'));
 });
 
+/** TODO compile sass (or less) **/
+// Compile Our Sass
+/*
+gulp.task('build-sass', function() {
+    return gulp.src('scss/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('css'));
+});
+*/
+
 gulp.task('build-browserify', function() {
 	gulp.src(['app/js/main.js'])
 	.pipe(browserify({
@@ -39,6 +49,13 @@ gulp.task('build-browserify', function() {
 	}))
 	.pipe(concat('app-bundle.js'))
 	.pipe(gulp.dest('./app/js'))
+});
+
+// Watch Files For Changes
+// Todo - learn and understand better how this works, and make it work with connect.server.
+gulp.task('build-watch', function() {
+    gulp.watch('app/js/**/*.js', ['build-browserify']);
+    //gulp.watch('scss/*.scss', ['sass']);
 });
 
 gulp.task('dev-connect', function () {
@@ -81,7 +98,7 @@ gulp.task('dist-connect', function () {
 
 // COMMAND-LINE TASKS
 gulp.task('build', ['init', 'build-lint', 'build-browserify']);
-gulp.task('dev', ['build', 'dev-connect']);
+gulp.task('dev', ['build', 'build-watch', 'dev-connect']);
 gulp.task('dist', ['build', 'dist-minify-css', 'dist-minify-js', 'dist-html-files', 'dist-bower-components']);
 gulp.task('prod', ['dist', 'dist-connect']);
 gulp.task('default', ['dev']);
