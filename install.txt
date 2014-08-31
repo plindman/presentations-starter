@@ -1,0 +1,17 @@
+﻿http://mherman.org/blog/2014/08/14/kickstarting-angular-with-gulp/#.U_4rffmSyfg
+http://mherman.org/blog/2014/08/15/kickstarting-angular-with-gulp-and-browserify-part-2/#.U_9ADvmSyfg
+
+npm install gulp-clean gulp-jshint gulp-uglify gulp-minify-css gulp-connect --save
+
+npm install gulp-browserify gulp-concat --save
+npm install angular angular-route angular-animate --save
+
+bower install --save
+jquery
+bootstrap
+angular 
+angular-route
+angular-animate  
+animate.css
+mobile-angular-ui
+
