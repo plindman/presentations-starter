@@ -49,6 +49,7 @@ gulp.task('build-browserify', function() {
 	}))
 	.pipe(concat('app-bundle.js'))
 	.pipe(gulp.dest('./app/js'))
+	.pipe(connect.reload());
 });
 
 // Watch Files For Changes
@@ -61,6 +62,7 @@ gulp.task('build-watch', function() {
 gulp.task('dev-connect', function () {
   connect.server({
     root: 'app/',
+	livereload: true,
     port: 8888
   });
 });
