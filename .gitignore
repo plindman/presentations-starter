@@ -1,3 +1,8 @@
+# =========================
+# Build / local dev Files
+# =========================
+/app/js/app-bundle.js
+
 # Dist (build locally)
 dist
 
@@ -69,4 +74,4 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
-/app/js/app-bundle.js
+
