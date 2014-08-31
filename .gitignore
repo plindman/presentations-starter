@@ -69,3 +69,4 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+/app/js/app-bundle.js
