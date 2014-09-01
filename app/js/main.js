@@ -8,7 +8,7 @@
 
   var mainCtrl = require('./controllers/main_ctrl');
   
-  angular.module('SampleApp', ['ngRoute', 'ngAnimate'])
+  angular.module('app', ['ngRoute', 'ngAnimate'])
   .config([
     '$locationProvider',
     '$routeProvider',
@@ -27,7 +27,7 @@
   ]);
 
   //Load controller(s)
-  angular.module('SampleApp')
+  angular.module('app')
   .controller('MainController', ['$scope', mainCtrl]);
 
 }());
