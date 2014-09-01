@@ -55,7 +55,7 @@ gulp.task('build-browserify', function() {
 // Watch Files For Changes
 // Todo - learn and understand better how this works, and make it work with connect.server.
 gulp.task('build-watch', function() {
-    gulp.watch('app/js/**/*.js', ['build-browserify']);
+    gulp.watch(['app/js/**/*.js', '!app/js/app-bundle.js'], ['build-browserify']);
     //gulp.watch('scss/*.scss', ['sass']);
 });
 
